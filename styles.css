@@ -238,3 +238,34 @@ footer {
 .master-table tr:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+/*
+ * Hide all columns after the ninth in the master list. The reading order tables contain
+ * numerous metadata fields, but for a cleaner presentation we only display the first
+ * nine columns (Reihenfolge, Epoche, Universum, Event/Storyarc, Part, Serie,
+ * Issue‑Nr., Issue (US‑Titel) und Issue (DE‑Titel)). The remaining data remains in
+ * the markup for future reference but is hidden from view.
+ */
+.master-table th:nth-child(n+10),
+.master-table td:nth-child(n+10) {
+  display: none;
+}
+
+/*
+ * Colour coding for different publication formats. Rows with the class
+ * `limited-series` use a warm amber tint, one‑shots use a soft blue,
+ * and ongoing series use a subtle green. Comment rows (if added later) use a yellow
+ * highlight. These tints are translucent so the zebra striping remains visible.
+ */
+.master-table tr.limited-series {
+  background-color: rgba(255, 165, 0, 0.15);
+}
+.master-table tr.one-shot {
+  background-color: rgba(0, 153, 255, 0.15);
+}
+.master-table tr.ongoing-series {
+  background-color: rgba(0, 255, 128, 0.12);
+}
+.master-table tr.comment {
+  background-color: rgba(255, 255, 0, 0.15);
+}
