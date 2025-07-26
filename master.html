@@ -73,6 +73,7 @@
         </select>
         <label for="searchBox">Suche:</label>
         <input type="text" id="searchBox" placeholder="Serie, Held oder Titel suchen…">
+        <button id="resetFilter" type="button">Alle anzeigen</button>
       </div>
       <div class="table-container">
         <table class="master-table">
@@ -291,6 +292,16 @@
               row.style.display = 'none';
             }
           });
+        });
+
+        // Reset‑Filter: Zeige alle Zeilen und setze Dropdowns zurück
+        document.getElementById('resetFilter').addEventListener('click', function() {
+          const rows = document.querySelectorAll('.master-table tbody tr');
+          rows.forEach(row => {
+            row.style.display = '';
+          });
+          document.getElementById('eventFilter').value = 'all';
+          document.getElementById('searchBox').value = '';
         });
 
         // Filter nach Epoche (Ära) über klickbare Liste in den Features
