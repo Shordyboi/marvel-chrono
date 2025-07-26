@@ -209,7 +209,8 @@ footer {
 .master-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
+  /* Slightly larger font for better readability */
+  font-size: 0.9rem;
   color: #c4cbed;
 }
 
@@ -224,6 +225,10 @@ footer {
   background-color: #1f2a44;
   font-weight: 600;
   white-space: nowrap;
+  /* Keep table header visible when scrolling */
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .master-table tr:nth-child(even) {
