@@ -199,3 +199,37 @@ footer {
     font-size: 1rem;
   }
 }
+
+/* Table styles for the master list */
+.table-container {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+.master-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  color: #c4cbed;
+}
+
+.master-table th,
+.master-table td {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.master-table th {
+  background-color: #1f2a44;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.master-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.master-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
