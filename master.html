@@ -37,11 +37,11 @@
       <h2>Strukturvorschlag</h2>
       <p>Wir empfehlen, die Master‑Order in überschaubare Abschnitte zu unterteilen. Du kannst sie nach Jahrzehnten (1960er, 1970er, …), nach Story‑Äras (z.B. Bronze Age, Modern Age) oder nach großen Events gliedern. Hier ein Beispiel für die ersten Abschnitte:</p>
       <ul style="margin-top:1rem;color:#c4cbed;font-size:0.95rem;padding-left:1rem;list-style:disc inside;">
-        <li><strong>1961–1969 – Anfänge der Helden:</strong> Die Geburt klassischer Figuren wie den Fantastischen Vier, Spider‑Man und den X‑Men.</li>
-        <li><strong>1970–1985 – Kosmische Abenteuer:</strong> Einführung von Thanos und kosmischen Ereignissen. Hier beginnt die Saga um den „Unendlichen Handschuh“.</li>
-        <li><strong>1986–1999 – Dunkle Geschichten:</strong> Entwicklungen wie „Kravens letzte Jagd“ und die großen Crossover der 1990er.</li>
-        <li><strong>2000–2014 – Modernes Marvel:</strong> Serien wie „Ultimates: Übermenschlich“ und Events wie „Bürgerkrieg“.</li>
-        <li><strong>2015 bis heute – Neustarts:</strong> „Secret Wars (2015)“, „All‑New All‑Different Marvel“ und aktuelle Ereignisse.</li>
+        <li><span class="era-filter" data-epoche="Silver Age" style="cursor:pointer;text-decoration:underline;color:#ff775f;">1961–1969 – Anfänge der Helden</span>: Die Geburt klassischer Figuren wie den Fantastischen Vier, Spider‑Man und den X‑Men.</li>
+        <li><span class="era-filter" data-epoche="Bronze Age" style="cursor:pointer;text-decoration:underline;color:#ff775f;">1970–1985 – Kosmische Abenteuer</span>: Einführung von Thanos und kosmischen Ereignissen. Hier beginnt die Saga um den „Unendlichen Handschuh“.</li>
+        <li><span class="era-filter" data-epoche="Modern Age" style="cursor:pointer;text-decoration:underline;color:#ff775f;">1986–1999 – Dunkle Geschichten</span>: Entwicklungen wie „Kravens letzte Jagd“ und die großen Crossover der 1990er.</li>
+        <li><span class="era-filter" data-epoche="Modern Age" style="cursor:pointer;text-decoration:underline;color:#ff775f;">2000–2014 – Modernes Marvel</span>: Serien wie „Ultimates: Übermenschlich“ und Events wie „Bürgerkrieg“.</li>
+        <li><span class="era-filter" data-epoche="Modern Age" style="cursor:pointer;text-decoration:underline;color:#ff775f;">2015 bis heute – Neustarts</span>: „Secret Wars (2015)“, „All‑New All‑Different Marvel“ und aktuelle Ereignisse.</li>
       </ul>
       <p>Du kannst dir eigene Listen erstellen oder eine Datenbank nutzen, um deinen Fortschritt zu verfolgen. Viele Fans führen Tabellen oder nutzen Apps, um den Überblick zu behalten.</p>
     </div>
@@ -290,6 +290,26 @@
             } else {
               row.style.display = 'none';
             }
+          });
+        });
+
+        // Filter nach Epoche (Ära) über klickbare Liste in den Features
+        document.querySelectorAll('.era-filter').forEach(function(element) {
+          element.addEventListener('click', function(evt) {
+            evt.preventDefault();
+            const era = this.getAttribute('data-epoche').toLowerCase();
+            const rows = document.querySelectorAll('.master-table tbody tr');
+            rows.forEach(row => {
+              const rowEra = row.children[1].textContent.toLowerCase();
+              if (!era || rowEra.includes(era)) {
+                row.style.display = '';
+              } else {
+                row.style.display = 'none';
+              }
+            });
+            // Zurücksetzen der anderen Filter, um Mehrfachfilter zu vermeiden
+            document.getElementById('eventFilter').value = 'all';
+            document.getElementById('searchBox').value = '';
           });
         });
       </script>
