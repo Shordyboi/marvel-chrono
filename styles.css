@@ -1,0 +1,201 @@
+/* Global styles for the German Marvel reading order site */
+
+/* Reset some default margins and set a pleasant font */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #0a0f24;
+  color: #f5f5f5;
+}
+
+/* Utility container to center content and set a max-width */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+header {
+  background-color: #0f1430;
+  border-bottom: 2px solid #1f294f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+header nav {
+  margin-left: auto;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+header nav a {
+  color: #c4cbed;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #ff775f;
+}
+
+/* Hero section with background image and overlay */
+.hero {
+  /* Use a subtle gradient instead of an external image to avoid hosting image assets */
+  background: linear-gradient(135deg, #142544 0%, #1e2a52 50%, #24386b 100%);
+  height: 70vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 36, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #e0e7ff;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ff5c4d;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e24a3e;
+}
+
+/* Section headings */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Feature cards grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background-color: #1a1d36;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff775f;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #c4cbed;
+}
+
+.link-btn {
+  display: inline-block;
+  color: #ff5c4d;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.link-btn:hover {
+  color: #e24a3e;
+}
+
+/* Intro and support sections */
+.intro, .support {
+  background-color: #0f1430;
+  padding: 2rem 0;
+}
+
+.intro p, .support p {
+  margin-bottom: 1rem;
+  color: #d3d8ef;
+  font-size: 1rem;
+}
+
+/* Footer styles */
+footer {
+  background-color: #060818;
+  padding: 1.5rem 0;
+  text-align: center;
+  color: #8a96bc;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
